@@ -95,8 +95,8 @@
     <limit
       effort="1.5"
       velocity="6.178465545" 
-      lower="-3.141593"
-      upper="3.141593" />
+      lower="-2.61799"
+      upper="2.61799" />
   </joint>
   <link
     name="bicep_link">
@@ -143,7 +143,7 @@
     type="revolute">
     <origin
       xyz="0 0 0.0265"
-      rpy="0 0 0" />
+      rpy="0 1.71042 0" />
     <parent
       link="shoulder_link" />
     <child
@@ -153,8 +153,8 @@
     <limit
       effort="3.0"
       velocity="6.178465545" 
-      lower="0"
-      upper="3.141593" />
+      lower="-1.71042"
+      upper="1.43117" />
   </joint>
   <link
     name="forearm_link">
@@ -201,7 +201,7 @@
     type="revolute">
     <origin
       xyz="-0.1445 0 0.0385"
-      rpy="0 0 0" />
+      rpy="0 -1.48353 0" />
     <parent
       link="bicep_link" />
     <child
@@ -211,8 +211,8 @@
     <limit
       effort="3.0"
       velocity="6.178465545" 
-      lower="-3.141593"
-      upper="0" />
+      lower="-1.5708"
+      upper="1.5708" />
   </joint>
   <link
     name="wrist_1">
@@ -269,8 +269,8 @@
     <limit
       effort="1.5"
       velocity="6.178465545" 
-      lower="-1.57079632679"
-      upper="1.57079632679" />
+      lower="-2.61799"
+      upper="2.61799" />
   </joint>
   <link
     name="wrist_2">
@@ -327,8 +327,8 @@
     <limit
       effort="1.5"
       velocity="6.178465545" 
-      lower="-3.141593"
-      upper="3.141593" />
+      lower="-2.61799"
+      upper="2.61799" />
   </joint>
   <link
     name="gripper_link">
