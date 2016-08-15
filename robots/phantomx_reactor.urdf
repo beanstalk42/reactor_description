@@ -1,5 +1,24 @@
 <robot
-  name="reactor_description">
+  name="phantomx_reactor">
+
+<!-- Virtual Dummy link b/c of message about intertia => does still not work
+  <link name="virtual_base">
+    <inertial>
+      <origin
+         xyz="0 0 0"
+         rpy="0 0 0"
+      />
+      <mass value="0.0" />
+      <inertia 
+        ixx="0.0" 
+        ixy="0.0"
+        ixz="0.0"
+        iyy="0.0"
+        iyz="0.0"
+        izz="0.0" />
+    </inertial>
+  </link>
+-->
   <link
     name="base_link">
     <inertial>
@@ -40,6 +59,18 @@
       </geometry>
     </collision>
   </link>
+<!-- Virtual Dummy link b/c of message about intertia => does still not work
+  <joint 
+    name="virtual_base_joint"
+    type="fixed">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0"
+    />
+    <parent link="virtual_base" />
+    <child link="base_link" />
+  </joint>
+-->
   <link
     name="shoulder_link">
     <inertial>
@@ -370,6 +401,26 @@
       </geometry>
     </collision>
   </link>
+<!--
+  <joint
+    name="gripper_joint"
+    type="prismatic">
+    <origin
+      xyz="0.04789 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="wrist_2" />
+    <child
+      link="gripper_link" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      effort="1.5"
+      velocity="6.178465545"
+      lower="0.0"
+      upper="0.037" />
+  </joint>
+-->
   <joint
     name="gripper_joint"
     type="fixed">
@@ -383,4 +434,5 @@
     <axis
       xyz="0 0 0" />
   </joint>
+
 </robot>
