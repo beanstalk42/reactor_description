@@ -1,24 +1,20 @@
 <robot
   name="phantomx_reactor">
 
-<!-- Virtual Dummy link b/c of message about intertia => does still not work
+<!-- Virtual Dummy base link without intertia -->
   <link name="virtual_base">
-    <inertial>
-      <origin
-         xyz="0 0 0"
-         rpy="0 0 0"
-      />
-      <mass value="0.0" />
-      <inertia 
-        ixx="0.0" 
-        ixy="0.0"
-        ixz="0.0"
-        iyy="0.0"
-        iyz="0.0"
-        izz="0.0" />
-    </inertial>
   </link>
--->
+  <!-- Virtual Dummy joint to link without intertia -->
+  <joint 
+    name="virtual_base_joint"
+    type="fixed">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0"
+    />
+    <parent link="virtual_base" />
+    <child link="base_link" />
+  </joint>
   <link
     name="base_link">
     <inertial>
@@ -59,18 +55,6 @@
       </geometry>
     </collision>
   </link>
-<!-- Virtual Dummy link b/c of message about intertia => does still not work
-  <joint 
-    name="virtual_base_joint"
-    type="fixed">
-    <origin
-      xyz="0 0 0"
-      rpy="0 0 0"
-    />
-    <parent link="virtual_base" />
-    <child link="base_link" />
-  </joint>
--->
   <link
     name="shoulder_link">
     <inertial>
