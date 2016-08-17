@@ -2,21 +2,21 @@
   name="phantomx_reactor">
 
 <!-- Virtual Dummy base link without intertia -->
-  <link name="virtual_base">
+  <link name="base_link">
   </link>
   <!-- Virtual Dummy joint to link without intertia -->
   <joint 
-    name="virtual_base_joint"
+    name="base_joint"
     type="fixed">
     <origin
       xyz="0 0 0"
       rpy="0 0 0"
     />
-    <parent link="virtual_base" />
-    <child link="base_link" />
+    <parent link="base_link" />
+    <child link="mounting_link" />
   </joint>
   <link
-    name="base_link">
+    name="mounting_link">
     <inertial>
       <origin
         xyz="-3.9657E-09 2.0144E-09 0.04262"
@@ -102,7 +102,7 @@
       xyz="0 0 0.081"
       rpy="0 0 0" />
     <parent
-      link="base_link" />
+      link="mounting_link" />
     <child
       link="shoulder_link" />
     <axis
